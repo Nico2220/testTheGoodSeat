@@ -129,9 +129,9 @@ export function Map() {
             <Search markers={markers} setMarkers={setMarkers} />
             <div className="start">End</div>
             <Search markers={markers} setMarkers={setMarkers} />
-            <button className="btn btn-primary btn-large" type="submit">
+            {/* <button className="btn btn-primary btn-large" type="submit">
               Find Route
-            </button>
+            </button> */}
           </form>
         </div>
         <Table offers={offers} isTableLoading={isTableLoading} />

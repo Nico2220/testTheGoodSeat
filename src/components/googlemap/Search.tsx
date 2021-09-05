@@ -30,7 +30,6 @@ export function Search(props: IProps) {
     value,
     suggestions: { status, data },
     setValue,
-    clearSuggestions,
   } = usePlacesAutocomplete({
     requestOptions: {
       location: {
