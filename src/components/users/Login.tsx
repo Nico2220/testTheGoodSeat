@@ -1,4 +1,4 @@
-import React, { FormEventHandler } from "react";
+import { FormEventHandler } from "react";
 import { Link, Redirect } from "react-router-dom";
 
 import { Spinner } from "../Spinner";

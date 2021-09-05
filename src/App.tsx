@@ -1,11 +1,6 @@
 import React from "react";
 import "./styles/App.scss";
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  Redirect,
-} from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Login } from "./components/users/Login";
 import { Signup } from "./components/users/Signup";
 import { Map } from "./components/googlemap/Map";

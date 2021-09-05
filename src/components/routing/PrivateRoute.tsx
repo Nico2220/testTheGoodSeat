@@ -1,6 +1,5 @@
 import React from "react";
 import { Route, Redirect, RouteProps } from "react-router-dom";
-import { axiosInstance } from "../../config/index";
 interface PrivateRouteProps extends RouteProps {
   component: any;
   isAuthenticated: boolean;

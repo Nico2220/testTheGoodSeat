@@ -38,10 +38,7 @@ export const Signup = () => {
     });
 
     try {
-      const response = await axiosInstance.post(
-        "/auth/registeruser",
-        stringBody
-      );
+      await axiosInstance.post("/auth/registeruser", stringBody);
 
       setLoading(false);
       SetRegister(true);

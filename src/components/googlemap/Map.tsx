@@ -97,10 +97,10 @@ export function Map() {
     } catch (error) {}
   };
 
-  const handleSbmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    getOffers();
-  };
+  // const handleSbmit = (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   getOffers();
+  // };
 
   React.useEffect(() => {
     if (markers.length === 2) {
@@ -124,7 +124,7 @@ export function Map() {
         <h3 className="title_route">Select A Route</h3>
         <div className="box">
           {/* <div className="line"></div> */}
-          <form onSubmit={handleSbmit}>
+          <form>
             <div className="start">Start</div>
             <Search markers={markers} setMarkers={setMarkers} />
             <div className="start">End</div>

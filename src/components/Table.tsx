@@ -1,5 +1,4 @@
 /* eslint-disable react/jsx-no-comment-textnodes */
-import React from "react";
 import { Offers } from "../types/offers";
 import { Spinner } from "./Spinner";
 
