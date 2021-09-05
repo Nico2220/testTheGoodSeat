@@ -1,0 +1,29 @@
+td,
+tr,
+th {
+  border: 1px solid $border-color;
+  padding: 5px;
+  font-size: 14px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 90%;
+  background-color: #fff;
+  margin: 50px 20px auto;
+  // padding: 10px;
+
+  thead {
+    background-color: $primary-color;
+    color: $write-color;
+  }
+}
+
+.board-container tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.offer-text {
+  text-align: center;
+  margin-top: 50px;
+}

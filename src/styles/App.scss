@@ -1,0 +1,19 @@
+@import "./config/config.scss";
+@import "./config/font.scss";
+@import "./pages/signupLogin.scss";
+@import "./pages//rides.scss";
+@import "./config/button.scss";
+@import "./config/Tables.scss";
+@import "./utils/spinner.scss";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $primary-font;
+  font-weight: 300;
+}
+
+a {
+  text-decoration: none;
+  color: $color-link;
+}

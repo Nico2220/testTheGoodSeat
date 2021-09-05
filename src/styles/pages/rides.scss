@@ -1,0 +1,101 @@
+.search_map {
+  display: flex;
+  height: 100vh;
+}
+
+.searchBox {
+  width: 45%;
+  // background-color: red;
+
+  .logo {
+    width: 50%;
+    margin: 10px auto;
+  }
+
+  img {
+    width: 100%;
+    margin: auto;
+  }
+
+  // .line {
+  //   width: 75%;
+  //   height: 1px;
+  //   margin: auto;
+  //   background-color: black;
+  // }
+}
+
+.box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  .line {
+    height: 115px;
+    width: 1px;
+    background-color: red;
+    margin-right: 20px;
+  }
+}
+
+.title_route {
+  margin: 20px 0 20px 40px;
+  color: $primary-color;
+}
+
+.start {
+  position: absolute;
+  margin: 10px;
+  font-size: 12px;
+  color: $text-muted-color;
+}
+
+.logout {
+  position: absolute;
+  z-index: 10px;
+  top: 20px;
+  right: 20px;
+  width: 100px;
+  background-color: $logo-color;
+}
+// .ride_form {
+//   flex: 1;
+// }
+
+// // .google_map {
+// //   flex: 1;
+// // }
+
+// .ride_container {
+//   width: 80%;
+//   height: 100vh;
+//   // background-color: red;
+//   margin: auto;
+
+//   h3 {
+//     padding-top: 100px;
+//   }
+// }
+
+// .form_line {
+//   display: flex;
+//   align-items: center;
+//   margin-top: 30px;
+// }
+
+// .form_route_container {
+//   width: 100%;
+//   height: 100%px;
+
+//   form {
+//     width: 100%;
+//   }
+// }
+
+// .form_group {
+//   width: 100%;
+//   height: 100px;
+//   border: 1px solid black;
+//   margin-bottom: 20px;
+// }
