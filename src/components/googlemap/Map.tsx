@@ -40,6 +40,8 @@ interface IMarker {
 export function Map() {
   const [markers, setMarkers] = React.useState<IMarker[]>([]);
   const [response, setResponse] = React.useState(null);
+  const [clickFindRoute, setClickFindRoute] = React.useState(false);
+  const [clickFindRouteForm, setClickFindRouteForm] = React.useState(false);
   const { isLoaded, loadError } = useLoadScript({
     googleMapsApiKey: "AIzaSyBhBABtU1Bt77Y4pw6KgwokTRqg61Eelf4",
     libraries,
@@ -52,11 +54,12 @@ export function Map() {
     setMarkers((current: IMarker[]) => {
       if (current.length === 2) {
         // removeMaker();
-        current.shift();
         // return [];
+        current = [];
       }
       return [...current, { lat: e.latLng.lat(), lng: e.latLng.lng() }];
     });
+    setClickFindRoute(false);
   }, []);
 
   const mapRef = React.useRef();
@@ -97,16 +100,17 @@ export function Map() {
     } catch (error) {}
   };
 
-  // const handleSbmit = (e: React.FormEvent) => {
-  //   e.preventDefault();
-  //   getOffers();
-  // };
+  const handleSubmit = (e: React.FormEvent) => {
+    setClickFindRouteForm(true);
+    e.preventDefault();
+    getOffers();
+  };
 
-  React.useEffect(() => {
-    if (markers.length === 2) {
-      getOffers();
-    }
-  }, [markers]);
+  // React.useEffect(() => {
+  //   if (markers.length === 2) {
+  //     getOffers();
+  //   }
+  // }, [markers]);
 
   if (loadError) return <p>Error loading maps</p>;
   if (!isLoaded) return <Spinner data-test="spinner" />;
@@ -124,16 +128,25 @@ export function Map() {
         <h3 className="title_route">Select A Route</h3>
         <div className="box">
           {/* <div className="line"></div> */}
-          <form>
+          <form onSubmit={handleSubmit}>
             <div className="start">Start</div>
-            <Search markers={markers} setMarkers={setMarkers} />
+            <Search
+              markers={markers}
+              setMarkers={setMarkers}
+              setClickFindRoute={setClickFindRoute}
+            />
             <div className="start">End</div>
-            <Search markers={markers} setMarkers={setMarkers} />
-            {/* <button className="btn btn-primary btn-large" type="submit">
+            <Search
+              markers={markers}
+              setMarkers={setMarkers}
+              setClickFindRoute={setClickFindRoute}
+            />
+            <button className="btn btn-primary btn-large" type="submit">
               Find Route
-            </button> */}
+            </button>
           </form>
         </div>
+
         <Table offers={offers} isTableLoading={isTableLoading} />
       </div>
 
@@ -172,6 +185,19 @@ export function Map() {
           />
         )}
       </GoogleMap>
+      <button
+        onClick={() => {
+          setClickFindRoute(true);
+          getOffers();
+        }}
+        className="btn btn-primary find-route"
+        style={{
+          display:
+            markers.length === 2 && clickFindRoute === false ? "" : "none",
+        }}
+      >
+        Find route
+      </button>
     </div>
   );
 }

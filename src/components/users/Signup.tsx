@@ -60,7 +60,7 @@ export const Signup = () => {
           <p className="sigin_link">
             Already a member ? <Link to="/"> Signin now</Link>{" "}
           </p>
-          <h2 className="title_signup ">Signup</h2>
+          <h2 className="title_signup">Signup</h2>
           <form onSubmit={handleSubmit}>
             <div className="form_group">
               <label>Email</label>

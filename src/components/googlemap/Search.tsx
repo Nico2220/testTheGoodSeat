@@ -20,6 +20,7 @@ interface IMarker {
 interface IProps {
   markers: IMarker[];
   setMarkers: Function;
+  setClickFindRoute: Function;
 }
 
 export function Search(props: IProps) {
@@ -41,8 +42,8 @@ export function Search(props: IProps) {
 
   const handleSelectvalue = (val: string): void => {
     setValue(val, false);
-
     getGeo(val);
+    props.setClickFindRoute(true);
   };
 
   const getGeo = async (address: string) => {
@@ -51,7 +52,8 @@ export function Search(props: IProps) {
       const { lat, lng } = await getLatLng(result[0]);
       props.setMarkers((current: IMarker[]) => {
         if (current.length === 2) {
-          current.shift();
+          // current.shift();
+          current = [];
         }
         return [...current, { lat, lng }];
       });
@@ -85,7 +87,7 @@ export function Search(props: IProps) {
         style={{
           width: "400px",
           height: "80px",
-          marginBottom: "40px",
+          marginBottom: "20px",
           outline: "none",
           border: "none",
           backgroundColor: "#f5f5f6",
